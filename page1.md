@@ -1,4 +1,3 @@
-title: 娃哈哈
 
 ### 这是markdown文件
 
@@ -7,6 +6,5 @@ title: 娃哈哈
 ```
 import W from 'w'
 ```
-
 
 ![img](./img/1.jpeg)
