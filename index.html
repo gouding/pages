@@ -4,14 +4,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>D</title>
+  <style>
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      height: 100vh;
+      font-weight: bold;
+    }
+
+    .move {
+      position: absolute;
+      margin-top: 100px;
+      animation: move 1s infinite alternate;
+      -webkit-animation: move 1s infinite alternate;
+      -o-animation: move 1s infinite alternate;
+      -moz-animation: move 1s infinite alternate;
+      -ms-animation: move 1s infinite alternate;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @keyframes move {
+      from {
+        margin-top: 150px;
+        opacity: 1;
+      }
+
+      to {
+        margin-top: 200px;
+        opacity: 0;
+      }
+    }
+
+
+    @-webkit-keyframes move {
+      from {
+        margin-top: 100px;
+      }
+
+      to {
+        margin-top: 300px;
+      }
+    }
+
+    @-moz-keyframes move {
+      from {
+        margin-top: 100px;
+      }
+
+      to {
+        margin-top: 300px;
+      }
+    }
+
+    @-o-keyframes move {
+      from {
+        margin-top: 100px;
+      }
+
+      to {
+        margin-top: 300px;
+      }
+    }
+
+    @-ms-keyframes move {
+      from {
+        margin-top: 100px;
+      }
+
+      to {
+        margin-top: 300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  hello denzel
-  <a href="/page1">page1</a>
-  <a href="/page2">page2</a>
-  <a href="/page2.html">page2.html</a>
+  <div id="root">
+    Hello Denzel :)
+    <div class="move">
+      <a href=""> ⇣</a>
+    </div>
+  </div>
 </body>
 
 </html>
