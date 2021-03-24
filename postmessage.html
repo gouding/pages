@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对接页面</title>
+</head>
+
+<body>
+  <p>时间戳:<span id="t"></span></p>
+  <p>返回值:<span id="res"></span></p>
+  <script>
+    window.onload = () => {
+      document.getElementById('t').innerHTML = +new Date()
+    }
+    window.onmessage = ({data}) => {
+      document.getElementById('res').innerHTML = JSON.stringify(data, null, 2)
+    }
+  </script>
+</body>
+
+</html>
