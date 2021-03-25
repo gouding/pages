@@ -12,13 +12,20 @@
       outline: none;
       padding: 20px;
     }
+
+    li {
+      cursor: pointer;
+    }
+    li:hover{
+      background-color: #ddd;
+    }
   </style>
 </head>
 
 <body>
   <ul id="list">
   </ul>
-  <audio id='s' controls></audio>
+  <audio id='s' controls autoplay loop></audio>
   <div contenteditable="true" id="tex">
 
   </div>
@@ -30,6 +37,12 @@
         {
           name: 'neve play - Emily and the Woods',
           path: './music/never_play.mp3'
+        }, {
+          name: '天空之城 - 吉他独奏',
+          path: './music/skycity.mp3'
+        },{
+          name:'加州旅馆电吉他SOLO 纯伴奏',
+          path:'./music/ca.mp3'
         }
       ];
 
