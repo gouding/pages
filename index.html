@@ -5,61 +5,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hi Denzel is Here :)</title>
+  <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
   <style>
+    body {
+      max-width: 46vh;
+      margin: 9vh 8% 3vh auto;
+      padding: 0 5%;
+      color: #2c251b;
+      font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      height: 100%;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: url(/img/bg.jpeg) 88% 70%;
+      background-size: cover;
+    }
+
     #tex {
       height: 200px;
-      border: 1px solid #ddd;
+      border: 1px solid #000;
       outline: none;
       padding: 20px;
     }
 
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
     li {
       cursor: pointer;
+      list-style: none;
     }
-    li:hover{
+
+    li:hover {
       background-color: #ddd;
+    }
+
+    #root {
+      padding: 100px;
     }
   </style>
 </head>
 
 <body>
-  <ul id="list">
-  </ul>
-  <audio id='s' controls autoplay loop></audio>
-  <div contenteditable="true" id="tex">
-
+  <div id="root">
+    <ul id="list">
+    </ul>
+    <!-- <audio id='s' controls autoplay loop></audio> -->
+    <div id="audio"></div>
+    <div contenteditable="true" id="tex">
+      hi~ weclome
+    </div>
   </div>
   <script>
 
     window.onload = function () {
 
-      var list = [
-        {
-          name: 'neve play - Emily and the Woods',
-          path: './music/never_play.mp3'
-        }, {
-          name: '天空之城 - 吉他独奏',
-          path: './music/skycity.mp3'
-        },{
-          name:'加州旅馆电吉他SOLO 纯伴奏',
-          path:'./music/ca.mp3'
-        }
-      ];
+      // var list = [
+      //   {
+      //     name: 'neve play - Emily and the Woods',
+      //     path: './music/never_play.mp3'
+      //   }, {
+      //     name: '天空之城 - 吉他独奏',
+      //     path: './music/skycity.mp3'
+      //   }, {
+      //     name: '加州旅馆电吉他SOLO 纯伴奏',
+      //     path: './music/ca.mp3'
+      //   }
+      // ];
 
-      for (var i = 0; i < list.length; i++) {
-        (function (data) {
-          var li = document.createElement('li');
-          li.onclick = function () {
-            document.getElementById('s').setAttribute('src', data.path);
-          }
-          li.innerText = data.name;
-          document.getElementById('list').appendChild(li);
-        })(list[i])
-      }
+      // for (var i = 0; i < list.length; i++) {
+      //   (function (data) {
+      //     var li = document.createElement('li');
+      //     li.onclick = function () {
+      //       document.getElementById('s').setAttribute('src', data.path);
+      //     }
+      //     li.innerText = data.name;
+      //     document.getElementById('list').appendChild(li);
+      //   })(list[i])
+      // }
       document.getElementById('s').setAttribute('src', list[0]['path']);
-
-
     }
+    const ap = new APlayer({
+      container: document.getElementById('audio'),
+      audio: [{
+        name: 'neve play',
+        artist: 'Emily and the Woods',
+        url: './music/never_play.mp3',
+        cover: './img/1.jpeg'
+      }, {
+        name: '天空之城',
+        artist: '吉他独奏',
+        url: './music/skycity.mp3',
+        cover: './img/1.jpeg'
+      }, {
+        name: '加州旅馆电吉他SOLO',
+        artist: '纯伴奏',
+        url: './music/ca.mp3',
+        cover: './img/1.jpeg'
+      }]
+    });
   </script>
 </body>
 
